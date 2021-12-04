@@ -1,0 +1,13 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    background: cadetblue;
+}
+
+nav a{
+    border: solid;
+    width: 33.33%;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+}
