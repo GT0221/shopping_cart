@@ -39,7 +39,7 @@ function RouteSwitch() {
                         element={<Checkout />}
                         setQuantityDisplay={setQuantityDisplay}
                     />
-                    <Route index element={<Home />} />
+                    <Route path='/' element={<Home />} />
                 </Routes>
             </Router>
         </div>
