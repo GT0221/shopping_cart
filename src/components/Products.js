@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import Input from "./Input";
-import Message from "./Message";
+import React, { useState, useEffect } from 'react';
+import Input from './Input';
+import Message from './Message';
 import {
     importImages,
     setLocalStorage,
     returnGameConsoles,
     countStorageQuantity,
-} from "./helpers";
-import "../styles/Products.css";
+} from './helpers';
+import '../styles/Products.css';
 
 const productImages = importImages(
-    require.context("../images/products", false, /\.(png|jpe?g|svg)$/)
+    require.context('../images/products', false, /\.(png|jpe?g|svg)$/)
 );
 
 function Products(props) {
@@ -21,30 +21,30 @@ function Products(props) {
     const [showMessage, setShowMessage] = useState(false);
     const handleSubmit = (e) => {
         const inputValue = e.target[0].value;
-        const inputId = e.target[0]["id"];
+        const inputId = e.target[0]['id'];
         e.preventDefault();
         if (!inputValue) {
             return;
         } else if (Object.keys(cartItems).includes(inputId)) {
             setCartItems(() => ({
                 ...cartItems,
-                [e.target[0]["id"]]: {
-                    imageSrc: gameConsoles[e.target[0]["id"]].imageSrc,
-                    title: gameConsoles[e.target[0]["id"]].title,
-                    price: gameConsoles[e.target[0]["id"]].price,
+                [e.target[0]['id']]: {
+                    imageSrc: gameConsoles[e.target[0]['id']].imageSrc,
+                    title: gameConsoles[e.target[0]['id']].title,
+                    price: gameConsoles[e.target[0]['id']].price,
                     quantity:
-                        gameConsoles[e.target[0]["id"]].quantity +
+                        gameConsoles[e.target[0]['id']].quantity +
                         cartItems[inputId].quantity,
                 },
             }));
         } else if (!Object.keys(cartItems).includes(inputId)) {
             setCartItems(() => ({
                 ...cartItems,
-                [e.target[0]["id"]]: {
-                    imageSrc: gameConsoles[e.target[0]["id"]].imageSrc,
-                    title: gameConsoles[e.target[0]["id"]].title,
-                    price: gameConsoles[e.target[0]["id"]].price,
-                    quantity: gameConsoles[e.target[0]["id"]].quantity,
+                [e.target[0]['id']]: {
+                    imageSrc: gameConsoles[e.target[0]['id']].imageSrc,
+                    title: gameConsoles[e.target[0]['id']].title,
+                    price: gameConsoles[e.target[0]['id']].price,
+                    quantity: gameConsoles[e.target[0]['id']].quantity,
                 },
             }));
         }

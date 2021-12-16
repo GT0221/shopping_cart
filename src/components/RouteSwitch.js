@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React, { useState } from "react";
-import App from "../App";
-import Home from "./Home";
-import Products from "./Products";
-import { Cart, Checkout } from "./Cart";
-import { countStorageQuantity } from "./helpers";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import App from '../App';
+import Home from './Home';
+import Products from './Products';
+import { Cart, Checkout } from './Cart';
+import { countStorageQuantity } from './helpers';
 
 function RouteSwitch() {
     const [quantityDisplay, setQuantityDisplay] = useState(
@@ -15,7 +15,7 @@ function RouteSwitch() {
             <Router>
                 <App quantityDisplay={quantityDisplay} />
                 <Routes>
-                    <Route index path="/home" element={<Home />} />
+                    <Route path="/home" element={<Home />} />
                     <Route
                         path="/products"
                         element={
@@ -39,7 +39,7 @@ function RouteSwitch() {
                         element={<Checkout />}
                         setQuantityDisplay={setQuantityDisplay}
                     />
-                    <Route path="/" element={<Home />} />
+                    <Route index element={<Home />} />
                 </Routes>
             </Router>
         </div>

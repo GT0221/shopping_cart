@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Input from "./Input";
-import Message from "./Message";
-import { Link } from "react-router-dom";
-import { getLocalStorage, countStorageQuantity } from "./helpers";
-import "../styles/Cart.css";
+import React, { useState, useEffect } from 'react';
+import Input from './Input';
+import Message from './Message';
+import { Link } from 'react-router-dom';
+import { getLocalStorage, countStorageQuantity } from './helpers';
+import '../styles/Cart.css';
 
 function Cart(props) {
     const [cartItems, setCartItems] = useState(getLocalStorage() || null);
@@ -20,7 +20,7 @@ function Cart(props) {
     };
     const clearCart = () => {
         const userAnswer = window.confirm(
-            "Are you sure you want to remove all items?"
+            'Are you sure you want to remove all items?'
         );
 
         if (userAnswer) {
@@ -37,7 +37,7 @@ function Cart(props) {
     };
 
     useEffect(() => {
-        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
         props.setQuantityDisplay(countStorageQuantity());
     }, [cartItems, props]);
 
@@ -67,14 +67,14 @@ function Cart(props) {
                             <img
                                 src={cartItems[key].imageSrc}
                                 style={{
-                                    width: "75px",
-                                    height: "100px",
-                                    objectFit: "contain",
+                                    width: '75px',
+                                    height: '100px',
+                                    objectFit: 'contain',
                                 }}
                                 alt=""
                             />
                         </div>
-                        <div style={{ textAlign: "center", width: "25%" }}>
+                        <div style={{ textAlign: 'center', width: '25%' }}>
                             <p>{cartItems[key].title}</p>
                             <br></br>
                             <p>Price: ${cartItems[key].price}</p>
@@ -87,7 +87,7 @@ function Cart(props) {
                                 buttons={true}
                             />
                         </div>
-                        <div style={{ textAlign: "center", width: "25%" }}>
+                        <div style={{ textAlign: 'center', width: '25%' }}>
                             <p>
                                 Total: $
                                 {cartItems[key].price * cartItems[key].quantity}

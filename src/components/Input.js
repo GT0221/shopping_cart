@@ -1,11 +1,11 @@
-import React from "react";
-import "../styles/Input.css";
+import React from 'react';
+import '../styles/Input.css';
 
 function Input(props) {
     const handleButtonClick = (e) => {
         const action = e.target.classList[1];
 
-        if (action === "increment") {
+        if (action === 'increment') {
             props.changeQuantity(() => ({
                 ...props.products,
                 [props.productKey]: {
@@ -13,7 +13,7 @@ function Input(props) {
                     quantity: props.products[props.productKey].quantity + 1,
                 },
             }));
-        } else if (action === "decrement") {
+        } else if (action === 'decrement') {
             props.changeQuantity(() => ({
                 ...props.products,
                 [props.productKey]: {
@@ -54,7 +54,7 @@ function Input(props) {
                 onClick={handleButtonClick}
                 className={`quantity-btns decrement`}
                 style={{
-                    display: `${!props.buttons ? "none" : "inline-block"}`,
+                    display: `${!props.buttons ? 'none' : 'inline-block'}`,
                 }}
             >
                 -
@@ -64,7 +64,7 @@ function Input(props) {
                 onClick={handleButtonClick}
                 className={`quantity-btns increment`}
                 style={{
-                    display: `${!props.buttons ? "none" : "inline-block"}`,
+                    display: `${!props.buttons ? 'none' : 'inline-block'}`,
                 }}
             >
                 +
