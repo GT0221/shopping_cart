@@ -70,6 +70,12 @@
     text-decoration: none;
 }
 
+
+.checkout-page p {
+    padding: 25px;
+    font-size: 32px;
+}
+
 @media only screen and (max-width: 1000px) {
     .cart-items {
         width: 90%;
