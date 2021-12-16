@@ -1,18 +1,32 @@
+.products-page {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.products-page h1 {
+    text-align: center;
+}
+
+.products-page .quantity-container {
+    width: 50%;
+    margin: auto;
+}
+
 .product-cards {
-    width: 75%;
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat( auto-fill, minmax(250px, 1fr));
-    grid-template-rows: repeat( auto-fill, minmax(250px, 1fr));
-    row-gap: 100px;
-    column-gap: 100px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+    row-gap: 25px;
+    column-gap: 25px;
+    padding: 30px 40px 30px 40px;
 }
 
 .product-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    margin: auto;
-    padding: 12px;
+    padding: 10px 10px;
     text-align: center;
     font-family: arial;
 }
@@ -20,7 +34,28 @@
 .product-card img {
     width: 300px;
     height: 200px;
-    max-width: 300px;
-    max-height: 200px;
-    object-fit:contain
+    object-fit: contain;
+    margin: auto;
+}
+
+#submit {
+    margin-top: 20px;
+    width: 75%;
+    text-align: center;
+    padding: 12px;
+    border: none;
+    outline: 0;
+    background-color: #000;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    opacity: 0.8;
+}
+
+.price {
+    color: grey;
+    font-size: 20px;
 }

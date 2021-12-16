@@ -1,0 +1,10 @@
+.message {
+    position: fixed;
+    right: 0;
+    width: fit-content;
+    display: flex;
+    background-color: white;
+    padding: 5px;
+    font-size: 30px;
+    border: solid 1px grey;
+}

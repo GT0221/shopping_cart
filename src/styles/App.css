@@ -1,13 +1,47 @@
 nav {
     display: flex;
     justify-content: space-around;
-    background: cadetblue;
+    background: black;
 }
 
-nav a{
-    border: solid;
+nav a {
+    color: white;
     width: 33.33%;
     height: 100%;
     padding: 10px;
+    font-size: 25px;
     text-align: center;
+    text-decoration: none;
+}
+
+nav a:first-child {
+    border-right: solid 1px white;
+}
+
+nav a:last-child {
+    border-left: solid 1px white;
+}
+
+.active {
+    background-color: rgb(196, 188, 188);
+    color: black;
+}
+
+.notification {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+    padding-left: 5px;
+}
+
+.notification .badge {
+    position: absolute;
+    top: 4px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    font-size: 16px;
 }
